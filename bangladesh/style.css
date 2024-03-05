@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {}
+
+.button-group {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+}
+
+.design-one,
+.design-two {
+    font-family: 'Galada', cursive;
+}
+
+.design-one h2,
+.design-one h2 span,
+.design-two h2,
+.design-two p {
+    font-family: inherit;
+}
+
+.design-one h2 span {
+    animation: get_animate .3s linear infinite;
+    animation-delay: calc(0.1s * var(--ui));
+}
+
+@keyframes get_animate {
+    0% {
+        color: #fff;
+        filter: blur(0) hue-rotate(0deg);
+        text-shadow: 0 0 10px #f10a3c,
+        0 0 20px #f10a3c,
+        0 0 40px #f10a3c,
+        0 0 80px #f10a3c,
+        0 0 120px #f10a3c,
+        0 0 200px #f10a3c,
+        0 0 300px #f10a3c,
+        0 0 400px #f10a3c;
+    }
+    30%,70% {
+        color: #fff;
+        filter: blur(0) hue-rotate(360deg);
+        text-shadow: 0 0 10px #f10a3c,
+        0 0 20px #f10a3c,
+        0 0 40px #f10a3c,
+        0 0 80px #f10a3c,
+        0 0 120px #f10a3c,
+        0 0 200px #f10a3c;
+    }
+    100% {
+        color: transparent;
+        box-shadow: none;
+        filter: blur(1px) hue-rotate(0deg);
+    }
+}
+
+.design-two h2 {
+    font-size: 6rem;
+    text-align: center;
+    color: rgb(255 255 255 / 50%);
+    text-shadow: 0 5px 4px #fbb2cb, 0 -8px 15px #ff0057;
+}
+.design-two p {
+    font-size: 2em;
+    color: rgba(248, 249, 250, 0.5);
+    text-shadow: 0 5px 4px #fbb2cb, 0 -5px 4px #ff0057;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .design-two h2 {
+        font-size: 3.5em;
+    }
+    .design-two p {
+        font-size: 1.5em;
+    }
+    
+    .design-one .text-7xl {
+        font-size: 3em;
+    }
+}
+
+@media only screen and (max-width: 675px) {
+    .design-two h2 {
+        font-size: 3.5em;
+    }
+    .design-two p {
+        font-size: 1em;
+    }
+
+    .design-one .text-7xl {
+        font-size: 1em;
+    }
+}
